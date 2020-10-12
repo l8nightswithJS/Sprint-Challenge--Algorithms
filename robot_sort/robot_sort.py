@@ -10,6 +10,10 @@ class SortingRobot:
         self._time = 0          # A time counter (stretch)
 
     def can_move_right(self):
+        if self._position == len(self._list):
+            return False
+        elif self._position >= 0:
+            return True
         """
         Returns True if the robot can move right or False if it's
         at the end of the list.
@@ -17,6 +21,10 @@ class SortingRobot:
         return self._position < len(self._list) - 1
 
     def can_move_left(self):
+        if self._position == 0:
+            return False
+        elif self._position > 0:
+            return True
         """
         Returns True if the robot can move left or False if it's
         at the start of the list.
@@ -24,6 +32,8 @@ class SortingRobot:
         return self._position > 0
 
     def move_right(self):
+        if can_move_right(self._position):
+            pass
         """
         If the robot can move to the right, it moves to the right and
         returns True. Otherwise, it stays in place and returns False.
