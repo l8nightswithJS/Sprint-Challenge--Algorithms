@@ -100,13 +100,28 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        for i in range(len(self._list)):
+        # Worst case basecase end of list
+        if not self.can_move_right():
+            return 
+        
+        self.swap_item()
+
+        #while robot is in valid position and not at basecase         
+        while self.can_move_right():
+            self.move_right()
+
+        #if value is greater compare
+            if self.compare_item() == 1:
+                self.swap_item()
+
+        while self.compare_item() is not None:        
+            self.move_left()
+
+        self.swap_item()
             
-            if self._list[self._position] >= 0:
-                if self._list[i] < self._list[i+1]:
-                    print(i)
-
-
+        self.move_right()
+        #Recursive call of sort Function
+        self.sort()    
 
 if __name__ == "__main__":
     # Test our your implementation from the command line

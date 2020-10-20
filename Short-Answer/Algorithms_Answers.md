@@ -9,18 +9,11 @@ b)
 time o(n2) has two loops running o(n) plus o(n)
 
 c)
-time o(n) checking bunnies as a whole more that is added to length must be added to processing time  
+time o(n) checking bunnies as a whole, the more that is added to length must be added to processing time  
 ## Exercise II
 1st create range for room floors,
-2nd sort floor at which eggs are dropped,
-3rd compare both arrays,
-4th assign value of desired output to new array 
+2nd binary search, checking if floor is higher or lower than f,
+3rd append results of non broken eggs to new array
 
-i in range(floors)
-i in (floorsdroppedat)
-sort (floorsdroppedat)
-compare (floorsdroppedat) < (floorrangeval(f))
-append data
-
-time complexity o(n2)
+time complexity o(n)
 
