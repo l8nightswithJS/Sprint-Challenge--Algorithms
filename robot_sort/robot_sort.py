@@ -10,6 +10,7 @@ class SortingRobot:
         self._time = 0          # A time counter (stretch)
 
     def can_move_right(self):
+        
         """
         Returns True if the robot can move right or False if it's
         at the end of the list.
@@ -17,6 +18,7 @@ class SortingRobot:
         return self._position < len(self._list) - 1
 
     def can_move_left(self):
+        
         """
         Returns True if the robot can move left or False if it's
         at the start of the list.
@@ -24,6 +26,7 @@ class SortingRobot:
         return self._position > 0
 
     def move_right(self):
+        pass
         """
         If the robot can move to the right, it moves to the right and
         returns True. Otherwise, it stays in place and returns False.
@@ -97,8 +100,28 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # Worst case basecase end of list
+        if not self.can_move_right():
+            return 
+        
+        self.swap_item()
 
+        #while robot is in valid position and not at basecase         
+        while self.can_move_right():
+            self.move_right()
+
+        #if value is greater compare
+            if self.compare_item() == 1:
+                self.swap_item()
+
+        while self.compare_item() is not None:        
+            self.move_left()
+
+        self.swap_item()
+            
+        self.move_right()
+        #Recursive call of sort Function
+        self.sort()    
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
